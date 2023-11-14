@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackJack</title>
+</head>
+
+<body>
+    <header>
+        <h1>Blackjack</h1>
+        <h2>Zagraj w blackjack</h2>
+
+    </header>
+    <main>
+        <div id="polegry">
+            <div id="krupier">
+                <h1 id="nazwakrupier">Karty krupiera</h1>
+                <h2 id="kartykrupiera"></h2>
+            </div>
+            <div id="gracz">
+                <h1 id="kartygracza">Twoje karty:</h1>
+                <h2 id="twojekarty"></h2>
+                <div id="przyciski"><button id="graj" onclick="start()">Graj</button><button id="dobieraj" onclick="dobieraj()">Dobieraj</button><button
+                        id="pas" onclick="pas()">Pasuje</button>
+                        <button
+                        id="reset" onclick="location.reload()">Reset</button>
+                    </div>
+                    <h1 id="efekt"></h1>
+            </div>
+
+        </div>
+    </main>
+<script src="main.js"></script>
+</body>
+
+</html>
