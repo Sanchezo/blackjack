@@ -1,0 +1,20 @@
+
+h1 h2{
+    font-family: Impact !important;
+}
+body{
+    text-align: center;
+    margin:0;
+    font-family: Consolas;
+    background-color: black;
+    color:gainsboro;
+}
+main{
+    margin-top: 100px;
+
+}
+button{
+    margin: 10px;
+    width: 100px;
+    height: 200%;
+}

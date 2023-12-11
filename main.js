@@ -80,7 +80,11 @@ function licz() {
     
     
 }
-
+function hide(){
+    document.getElementById("dobieraj").style.visibility = "hidden"
+    document.getElementById("graj").style.visibility = "hidden"
+    document.getElementById("pas").style.visibility = "hidden"
+}
 function dobieraj() {
     wylosowana=losujK()
     wylosowaneG.push(wylosowana)
@@ -91,9 +95,7 @@ function dobieraj() {
     }
 }
 function lose(){
-    document.getElementById("dobieraj").style.visibility = "hidden"
-    document.getElementById("graj").style.visibility = "hidden"
-    document.getElementById("pas").style.visibility = "hidden"
+    hide()
     document.getElementById("efekt").innerHTML="Przegrałeś!"
     wylosowaneK.forEach(karta=>{
         if(karta == wylosowaneK[0]){
@@ -105,7 +107,34 @@ function lose(){
     document.getElementById("kartykrupiera").innerHTML="Karty krupiera: " +wylosowaneK
     return;
 }
+function win(){
+    hide()
+    document.getElementById("efekt").innerHTML="Wygrałeś"
+    wylosowaneK.forEach(karta=>{
+        if(karta == wylosowaneK[0]){
+            return;
+        }
+        kartaK+=karta
+        
+    })
+    document.getElementById("kartykrupiera").innerHTML="Karty krupiera: " +wylosowaneK
+    return;
+}
 function pas() {
-// TODO Add endings
+    hide()
+    document.getElementById("kartykrupiera").innerHTML=wylosowaneK
+
+    licz()
+    while (punktyG>punktyK && punktyK<16){
+        nowa=losujK()
+        wylosowaneK.push(nowa)
+        kartaK+=nowa
+        licz()
+    }
+    if (punktyG>punktyK || punktyK>21) {
+        win()
+        }    else {
+            lose()
+        }
 }
 
